@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://cj7xuuy7bk28w"]
+
+[ext_resource type="AudioStream" uid="uid://dahawf7ajkuul" path="res://popochiu/rooms/outside/props/tree/sfx_tree_impact.ogg" id="1_dqw2b"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_agc7y"]
+
+[resource]
+resource_name = "sfx_tree_impact"
+script = ExtResource("2_agc7y")
+audio = ExtResource("1_dqw2b")
+loop = false
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

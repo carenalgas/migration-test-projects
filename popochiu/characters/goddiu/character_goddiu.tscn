@@ -1,0 +1,69 @@
+[gd_scene load_steps=15 format=3 uid="uid://ddppcdo5wflfe"]
+
+[ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="1_1bs6v"]
+[ext_resource type="Resource" uid="uid://4mj8qakv2fsr" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_01.tres" id="2_dhf6p"]
+[ext_resource type="Texture2D" uid="uid://cuuslsc75f7g2" path="res://popochiu/characters/goddiu/goddiu.png" id="2_liret"]
+[ext_resource type="Resource" uid="uid://3sg51fysb7eq" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_02.tres" id="3_58l8m"]
+[ext_resource type="Resource" uid="uid://dmcpjayqn576j" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_03.tres" id="4_l4i2t"]
+[ext_resource type="Resource" uid="uid://hpgak1ekc3nj" path="res://popochiu/characters/goddiu/audio/vo_goddiu_angry_01.tres" id="5_bjmlj"]
+[ext_resource type="Resource" uid="uid://61aq212qg33a" path="res://popochiu/characters/goddiu/audio/vo_goddiu_angry_02.tres" id="6_eie41"]
+[ext_resource type="Resource" uid="uid://bqxopqt4fhqso" path="res://popochiu/characters/goddiu/audio/vo_goddiu_angry_03.tres" id="7_akgah"]
+[ext_resource type="Resource" uid="uid://cwkl7vix2gt5l" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_01.tres" id="8_g1qgb"]
+[ext_resource type="Resource" uid="uid://d1wxwcqk6wibm" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_02.tres" id="9_2w0cd"]
+[ext_resource type="Resource" uid="uid://b3sj4o04x3xv3" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_03.tres" id="10_rqy1h"]
+[ext_resource type="Resource" uid="uid://qprkag7hid0k" path="res://popochiu/characters/goddiu/audio/vo_goddiu_sad_01.tres" id="11_vv8xt"]
+[ext_resource type="Resource" uid="uid://blfu0da26tv13" path="res://popochiu/characters/goddiu/audio/vo_goddiu_sad_02.tres" id="12_dt4a3"]
+[ext_resource type="Resource" uid="uid://b00hcqlhbqxvw" path="res://popochiu/characters/goddiu/audio/vo_goddiu_sad_03.tres" id="13_r0h4b"]
+
+[node name="CharacterGoddiu" type="Area2D"]
+script = ExtResource("1_1bs6v")
+flips_when = 2
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_dhf6p"), ExtResource("3_58l8m"), ExtResource("4_l4i2t")])
+}, {
+"emotion": "angry",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("5_bjmlj"), ExtResource("6_eie41"), ExtResource("7_akgah")])
+}, {
+"emotion": "happy",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("8_g1qgb"), ExtResource("9_2w0cd"), ExtResource("10_rqy1h")])
+}, {
+"emotion": "sad",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("11_vv8xt"), ExtResource("12_dt4a3"), ExtResource("13_r0h4b")])
+}]
+popochiu_placeholder = null
+script_name = "Goddiu"
+description = "Goddiu"
+clickable = false
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -26)
+texture = ExtResource("2_liret")
+hframes = 4
+vframes = 4
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+position = Vector2(5, -49)

@@ -1,0 +1,112 @@
+[gd_scene load_steps=19 format=3 uid="uid://bi0sf7sm8b0ry"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_myduf"]
+[ext_resource type="PackedScene" uid="uid://df7dmm40qnwbs" path="res://popochiu/rooms/house/props/bg/prop_bg.tscn" id="2_7iv0y"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_hmpb4"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/walkable_areas/floor/walkable_area_floor.gd" id="3_54hx4"]
+[ext_resource type="Texture2D" uid="uid://cwh3knmaaw0n4" path="res://popochiu/rooms/house/props/bg/house_bg.png" id="4_w0yia"]
+[ext_resource type="PackedScene" uid="uid://c4hj0dv1ue56k" path="res://popochiu/rooms/house/props/drawer/prop_drawer.tscn" id="5_i4rxf"]
+[ext_resource type="Texture2D" uid="uid://ksmios7lj1g4" path="res://popochiu/rooms/house/props/drawer/house_drawer.png" id="7_f0fhc"]
+[ext_resource type="PackedScene" uid="uid://c0np3jv472t8h" path="res://popochiu/rooms/house/props/door/prop_door.tscn" id="8_xl1ok"]
+[ext_resource type="Texture2D" uid="uid://imy1vaewp1j3" path="res://popochiu/rooms/house/props/door/house_door.png" id="10_ljxkh"]
+[ext_resource type="PackedScene" uid="uid://bslimpdskcmix" path="res://addons/popochiu/engine/objects/region/popochiu_region.tscn" id="12_0dbfb"]
+[ext_resource type="PackedScene" uid="uid://hfvjxu5map27" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="12_iu0ar"]
+[ext_resource type="PackedScene" uid="uid://d2dvddne84pew" path="res://popochiu/rooms/house/props/toy_car/prop_toy_car.tscn" id="13_26e0p"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/regions/floor/region_floor.gd" id="13_fjvnm"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/hotspots/picture/hotspot_picture.gd" id="13_w1sij"]
+[ext_resource type="PackedScene" uid="uid://ddppcdo5wflfe" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="13_wb4w5"]
+[ext_resource type="Texture2D" uid="uid://b0qgo6lcpah1q" path="res://popochiu/rooms/house/props/toy_car/house_toy_car.png" id="15_k8etp"]
+[ext_resource type="PackedScene" uid="uid://xwyigsjfhl5d" path="res://popochiu/characters/popsy/character_popsy.tscn" id="15_mduo8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fdfv1"]
+vertices = PackedVector2Array(-130, -13, 84, -20, 150, 37, 54, 49, -15, 49, -118, -3, -154, 42, -144, 18, -129, 18, -133, -6)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(4, 6, 7, 8), PackedInt32Array(4, 8, 5), PackedInt32Array(0, 5, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-130, -13, 84, -20, 150, 37, 54, 49, -15, 49, -154, 42, -144, 18, -129, 18, -118, -3, -132.853, -6.46149)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[node name="RoomHouse" type="Node2D"]
+script = ExtResource("1_myduf")
+script_name = "House"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Floor" parent="WalkableAreas" instance=ExtResource("2_hmpb4")]
+position = Vector2(160, 90)
+script = ExtResource("3_54hx4")
+script_name = "Floor"
+description = "Floor"
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Floor"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_fdfv1")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_7iv0y")]
+position = Vector2(160, 90)
+texture = ExtResource("4_w0yia")
+
+[node name="Drawer" parent="Props" instance=ExtResource("5_i4rxf")]
+position = Vector2(25, 87)
+texture = ExtResource("7_f0fhc")
+frames = 2
+walk_to_point = Vector2(25, -1)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Drawer"]
+polygon = PackedVector2Array(-15, 16, -14, -6, -7, -18, 10, -16, 11, 3, 3, 18)
+
+[node name="Door" parent="Props" instance=ExtResource("8_xl1ok")]
+position = Vector2(68, 49)
+texture = ExtResource("10_ljxkh")
+frames = 2
+walk_to_point = Vector2(35, 33)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Door"]
+polygon = PackedVector2Array(-10, 22, -10, -10, -1, -26, 22, -25, 30, -9, 30, 22)
+
+[node name="ToyCar" parent="Props" instance=ExtResource("13_26e0p")]
+position = Vector2(87, 116)
+texture = ExtResource("15_k8etp")
+link_to_item = "ToyCar"
+walk_to_point = Vector2(22, -4)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/ToyCar"]
+polygon = PackedVector2Array(-8, 5, -8, -3, -3, -6, 5, -5, 9, 1, 4, 6)
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Picture" type="Area2D" parent="Hotspots" instance=ExtResource("12_iu0ar")]
+position = Vector2(202, 16)
+script = ExtResource("13_w1sij")
+script_name = "Picture"
+description = "Picture"
+walk_to_point = Vector2(-22, 63)
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Hotspots/Picture"]
+modulate = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(-14, -12, -16, 10, 14, 11, 14, -11)
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Floor" type="Area2D" parent="Regions" instance=ExtResource("12_0dbfb")]
+position = Vector2(160, 90)
+monitorable = false
+script = ExtResource("13_fjvnm")
+script_name = "Floor"
+description = "Floor"
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Regions/Floor"]
+modulate = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-26, 46, -23, -14, 81, -18, 141, 34, 55, 45)
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" parent="Characters" instance=ExtResource("13_wb4w5")]
+position = Vector2(56, 127)
+
+[node name="CharacterPopsy *" parent="Characters" instance=ExtResource("15_mduo8")]
+position = Vector2(247, 111)

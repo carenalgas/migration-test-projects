@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu0ig73swu837"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/outside/room_outside.gd" id="1_oog8k"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_345xq"]
+[ext_resource type="PackedScene" uid="uid://cv28aqeoo5l08" path="res://popochiu/rooms/outside/props/bg/prop_bg.tscn" id="2_375w6"]
+[ext_resource type="Script" path="res://popochiu/rooms/outside/walkable_areas/ground/walkable_area_ground.gd" id="3_tc6wl"]
+[ext_resource type="Texture2D" uid="uid://cycy64n81bbb7" path="res://popochiu/rooms/outside/props/bg/outside_background.png" id="6_l7nxs"]
+[ext_resource type="PackedScene" uid="uid://ddppcdo5wflfe" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="7_87waq"]
+[ext_resource type="PackedScene" uid="uid://khpbuxh8gqml" path="res://popochiu/rooms/outside/props/tree/prop_tree.tscn" id="7_vo58x"]
+[ext_resource type="Texture2D" uid="uid://crkf44a1snv2r" path="res://popochiu/rooms/outside/props/tree/outside_tree.png" id="9_jyamf"]
+[ext_resource type="PackedScene" uid="uid://hfvjxu5map27" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="10_86k1u"]
+[ext_resource type="Script" path="res://popochiu/rooms/outside/hotspots/door/hotspot_door.gd" id="11_2ixh0"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_80151"]
+vertices = PackedVector2Array(-87, 33, 24, -2, 121, -1, 120, 31, -90, 53, -111, -6, -6, -7, -126, 33, -154, 2, 213, 60, 213, 81, -211, 80, -125, 53, -212, 17, -183, 14, -133, 42)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 1, 0, 7, 8), PackedInt32Array(3, 9, 10, 11, 4), PackedInt32Array(12, 11, 13, 14, 15), PackedInt32Array(12, 4, 11), PackedInt32Array(15, 14, 8, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-154, 2, -111, -6, -6, -7, 24, -2, 121, -1, 120, 31, 213, 60, 213, 81, -211, 80, -212, 17, -183, 14), PackedVector2Array(-87, 33, -126, 33, -133, 42, -125, 53, -90, 53)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[node name="RoomOutside" type="Node2D"]
+script = ExtResource("1_oog8k")
+script_name = "Outside"
+limit_left = -64.0
+limit_right = 384.0
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Ground" parent="WalkableAreas" instance=ExtResource("2_345xq")]
+position = Vector2(160, 90)
+script = ExtResource("3_tc6wl")
+script_name = "Ground"
+description = "Ground"
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Ground"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_80151")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_375w6")]
+position = Vector2(160, 90)
+texture = ExtResource("6_l7nxs")
+
+[node name="Tree" parent="Props" instance=ExtResource("7_vo58x")]
+position = Vector2(52, 80)
+texture = ExtResource("9_jyamf")
+frames = 2
+baseline = 49
+walk_to_point = Vector2(37, 58)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Tree"]
+polygon = PackedVector2Array(-7, 53, -6, 1, -33, -3, -39, -28, -22, -57, 7, -61, 32, -47, 38, -19, 27, -7, 15, -1, 16, 55, 2, 57)
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Door" parent="Hotspots" instance=ExtResource("10_86k1u")]
+position = Vector2(160, 90)
+script = ExtResource("11_2ixh0")
+script_name = "Door"
+description = "Door"
+walk_to_point = Vector2(137, 46)
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Hotspots/Door"]
+modulate = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(197, 46, 200, 27, 197, -6, 182, -11, 167, -7, 162, 9, 163, 35)
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" parent="Characters" instance=ExtResource("7_87waq")]
+position = Vector2(311, 143)
