@@ -1,0 +1,36 @@
+@tool
+extends "res://addons/popochiu/engine/interfaces/i_audio.gd"
+
+# cues ----
+var vo_goddiu_happy_01: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_happy_01.tres")
+var vo_goddiu_happy_02: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_happy_02.tres")
+var vo_goddiu_happy_03: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_happy_03.tres")
+var vo_goddiu_normal_01: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_normal_01.tres")
+var vo_goddiu_normal_02: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_normal_02.tres")
+var vo_goddiu_normal_03: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_normal_03.tres")
+var vo_goddiu_sad_01: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_sad_01.tres")
+var vo_goddiu_sad_02: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_sad_02.tres")
+var vo_goddiu_sad_03: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_sad_03.tres")
+var vo_goddiu_angry_01: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_angry_01.tres")
+var vo_goddiu_angry_02: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_angry_02.tres")
+var vo_goddiu_angry_03: AudioCueSound = load("res://popochiu/characters/goddiu/audio/vo_goddiu_angry_03.tres")
+var vo_popsy_angry_01: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_angry_01.tres")
+var vo_popsy_angry_02: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_angry_02.tres")
+var vo_popsy_angry_03: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_angry_03.tres")
+var vo_popsy_happy_01: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_happy_01.tres")
+var vo_popsy_happy_02: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_happy_02.tres")
+var vo_popsy_happy_03: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_happy_03.tres")
+var vo_popsy_normal_01: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_normal_01.tres")
+var vo_popsy_normal_02: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_normal_02.tres")
+var vo_popsy_normal_03: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_normal_03.tres")
+var vo_popsy_sad_01: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_sad_01.tres")
+var vo_popsy_sad_02: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_sad_02.tres")
+var vo_popsy_sad_03: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_sad_03.tres")
+var mx_two_popochius: AudioCueMusic = load("res://popochiu/music/mx_two_popochius.tres")
+var sfx_apple_fall: AudioCueSound = load("res://popochiu/rooms/outside/props/tree/sfx_apple_fall.tres")
+var sfx_tree_impact: AudioCueSound = load("res://popochiu/rooms/outside/props/tree/sfx_tree_impact.tres")
+var sfx_drawer_close: AudioCueSound = load("res://popochiu/rooms/house/props/drawer/sfx_drawer_close.tres")
+var sfx_drawer_open: AudioCueSound = load("res://popochiu/rooms/house/props/drawer/sfx_drawer_open.tres")
+var mx_beach_time: AudioCueMusic = load("res://popochiu/music/mx_beach_time.tres")
+# ---- cues
+

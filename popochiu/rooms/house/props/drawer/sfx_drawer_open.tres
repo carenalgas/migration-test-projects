@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://bye8rj2s12mw3"]
+
+[ext_resource type="AudioStream" uid="uid://b2kdygckrhggv" path="res://popochiu/rooms/house/props/drawer/sfx_drawer_open.ogg" id="1_me0fl"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_ul15i"]
+
+[resource]
+resource_name = "sfx_drawer_open"
+script = ExtResource("2_ul15i")
+audio = ExtResource("1_me0fl")
+loop = false
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"
