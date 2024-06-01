@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://bil27y44847wc"]
+
+[ext_resource type="Script" path="res://game/characters/popsy/character_popsy.gd" id="1_ag78v"]
+[ext_resource type="AnimationLibrary" uid="uid://da22q4ea7ocfq" path="res://game/characters/popsy/popsy_animations.tres" id="2_23xxn"]
+[ext_resource type="Resource" uid="uid://3kcpk2qm3s6y" path="res://game/characters/popsy/audio/vo_popsy_normal_04.tres" id="2_i1jok"]
+[ext_resource type="Texture2D" uid="uid://bx02w104263dj" path="res://game/characters/popsy/popsy.png" id="3_h64gk"]
+[ext_resource type="Resource" uid="uid://u384iklb0iq8" path="res://game/characters/popsy/audio/vo_popsy_normal_05.tres" id="3_ixx46"]
+[ext_resource type="Resource" uid="uid://pr8b4hyoxthq" path="res://game/characters/popsy/audio/vo_popsy_normal_06.tres" id="4_0redm"]
+[ext_resource type="Resource" uid="uid://cvncfopaj6yjq" path="res://game/characters/popsy/audio/vo_popsy_happy_01.tres" id="5_righq"]
+[ext_resource type="Resource" uid="uid://o5d7wmd51a4" path="res://game/characters/popsy/audio/vo_popsy_happy_02.tres" id="6_q8se7"]
+[ext_resource type="Resource" uid="uid://bhw2bsskr64wa" path="res://game/characters/popsy/audio/vo_popsy_happy_03.tres" id="7_jq8g3"]
+[ext_resource type="Resource" uid="uid://c8p4bvmxi3kkd" path="res://game/characters/popsy/audio/vo_popsy_sad_04.tres" id="8_jpnii"]
+[ext_resource type="Resource" uid="uid://c805sypp8u2k5" path="res://game/characters/popsy/audio/vo_popsy_sad_05.tres" id="9_ajvwn"]
+[ext_resource type="Resource" uid="uid://blk1lcgg2rflh" path="res://game/characters/popsy/audio/vo_popsy_sad_06.tres" id="10_dytoc"]
+
+[node name="CharacterPopsy" type="Area2D"]
+script = ExtResource("1_ag78v")
+text_color = Color(0.87451, 0.423529, 0.443137, 1)
+flips_when = 1
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_i1jok"), ExtResource("3_ixx46"), ExtResource("4_0redm")])
+}, {
+"emotion": "happy",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("5_righq"), ExtResource("6_q8se7"), ExtResource("7_jq8g3")])
+}, {
+"emotion": "sad",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("8_jpnii"), ExtResource("9_ajvwn"), ExtResource("10_dytoc")])
+}]
+popochiu_placeholder = null
+script_name = "Popsy"
+description = "Popsy"
+walk_to_point = Vector2(-39, -9)
+cursor = 8
+interaction_polygon = PackedVector2Array()
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3, -7)
+polygon = PackedVector2Array(-12, -12, 6, -16, 22, -6, 21, 11, 1, 18, -24, 9)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+position = Vector2(-39, -9)
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": ExtResource("2_23xxn")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -7)
+texture = ExtResource("3_h64gk")
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="DialogPos" type="Marker2D" parent="."]
+position = Vector2(3, -17)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4uqulntcehh2"]
+
+[ext_resource type="Script" path="res://game/rooms/house/regions/floor/region_floor.gd" id="1_7pady"]
+
+[node name="Floor" type="Area2D"]
+monitorable = false
+script = ExtResource("1_7pady")
+script_name = "Floor"
+description = "Floor"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://pr8b4hyoxthq"]
+
+[ext_resource type="AudioStream" uid="uid://bcla15qn6eqse" path="res://game/characters/popsy/audio/vo_popsy_normal_06.ogg" id="1_d5euu"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_rdrku"]
+
+[resource]
+resource_name = "vo_popsy_normal_06"
+script = ExtResource("2_rdrku")
+audio = ExtResource("1_d5euu")
+loop = false
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"
