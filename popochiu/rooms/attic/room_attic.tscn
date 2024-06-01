@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvc4qjh4gk3lu"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/attic/room_attic.gd" id="1_v626k"]
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="2_cy7xs"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_lui46"]
+[ext_resource type="Script" path="res://popochiu/rooms/attic/walkable_areas/floor/walkable_area_floor.gd" id="3_0n4f1"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_bit7v"]
+[ext_resource type="Texture2D" uid="uid://pct57fcjjna7" path="res://popochiu/rooms/attic/props/bg/attic_bg.png" id="4_p0a5x"]
+[ext_resource type="PackedScene" uid="uid://ngsey1bvjkeb" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="7_qfrg4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_67cwk"]
+vertices = PackedVector2Array(84, -4, 96, 23, 90, 43, -90, 42, -104, 17, -78, -12)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-104, 17, -78, -12, 84, -4, 96, 23, 90, 43, -90, 42)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[node name="RoomAttic" type="Node2D"]
+script = ExtResource("1_v626k")
+script_name = "Attic"
+limit_left = 42.0
+limit_right = 278.0
+limit_top = 42.0
+limit_bottom = 138.0
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="WalkableAreas" instance=ExtResource("2_lui46")]
+position = Vector2(160, 90)
+script = ExtResource("3_0n4f1")
+script_name = "Floor"
+description = "Floor"
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Floor"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_67cwk")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" type="Area2D" parent="Props" instance=ExtResource("2_cy7xs")]
+z_index = -1
+position = Vector2(160, 90)
+script = ExtResource("3_bit7v")
+texture = ExtResource("4_p0a5x")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" parent="Characters" instance=ExtResource("7_qfrg4")]
+position = Vector2(93, 95)

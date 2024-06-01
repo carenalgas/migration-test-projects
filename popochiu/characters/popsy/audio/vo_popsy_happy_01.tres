@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dubcpuk7gggqa"]
+
+[ext_resource type="AudioStream" uid="uid://da8boom0r1ivq" path="res://popochiu/characters/popsy/audio/vo_popsy_happy_01.ogg" id="1_0vlpi"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_5vl10"]
+
+[resource]
+resource_name = "vo_popsy_happy_01"
+script = ExtResource("2_5vl10")
+audio = ExtResource("1_0vlpi")
+loop = false
+is_2d = false
+pitch = 0.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

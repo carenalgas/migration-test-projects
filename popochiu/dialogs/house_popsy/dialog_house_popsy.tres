@@ -1,0 +1,55 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://bxusegaq670no"]
+
+[ext_resource type="Script" path="res://popochiu/dialogs/house_popsy/dialog_house_popsy.gd" id="1_6841v"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/dialog/popochiu_dialog_option.gd" id="1_r08aq"]
+
+[sub_resource type="Resource" id="Resource_cjqwj"]
+resource_name = "HowAreYou"
+script = ExtResource("1_r08aq")
+id = "HowAreYou"
+text = "How is it going?"
+visible = true
+disabled = false
+always_on = false
+
+[sub_resource type="Resource" id="Resource_hggxv"]
+resource_name = "WhySad"
+script = ExtResource("1_r08aq")
+id = "WhySad"
+text = "You're sad, aren't you?"
+visible = false
+disabled = false
+always_on = false
+
+[sub_resource type="Resource" id="Resource_5yitq"]
+resource_name = "WhatWant"
+script = ExtResource("1_r08aq")
+id = "WhatWant"
+text = "What do you want to eat?"
+visible = false
+disabled = false
+always_on = false
+
+[sub_resource type="Resource" id="Resource_i4os6"]
+resource_name = "Confirmation"
+script = ExtResource("1_r08aq")
+id = "Confirmation"
+text = "What is it that you want to eat?"
+visible = false
+disabled = false
+always_on = false
+
+[sub_resource type="Resource" id="Resource_xcmek"]
+resource_name = "Exit"
+script = ExtResource("1_r08aq")
+id = "Exit"
+text = "See ya!"
+visible = true
+disabled = false
+always_on = false
+
+[resource]
+resource_name = "house_popsy"
+script = ExtResource("1_6841v")
+options = [SubResource("Resource_cjqwj"), SubResource("Resource_hggxv"), SubResource("Resource_5yitq"), SubResource("Resource_i4os6"), SubResource("Resource_xcmek")]
+script_name = "HousePopsy"
