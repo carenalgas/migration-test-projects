@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dwt704jcdrt1h"]
+
+[ext_resource type="AudioStream" uid="uid://ksj4w4oyf71m" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_03.ogg" id="1_xaatp"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_14rkc"]
+
+[resource]
+resource_name = "vo_goddiu_normal_03"
+script = ExtResource("2_14rkc")
+audio = ExtResource("1_xaatp")
+loop = false
+is_2d = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5an8qur5ofnp"]
+
+[ext_resource type="Script" path="res://popochiu/characters/popsy/character_popsy.gd" id="1_g2jaa"]
+[ext_resource type="Texture2D" uid="uid://ddtocrdm8rdtj" path="res://popochiu/characters/popsy/popsy.png" id="2_xscpv"]
+
+[node name="CharacterPopsy" type="Area2D"]
+script = ExtResource("1_g2jaa")
+text_color = Color(0.768627, 0.423529, 0.443137, 1)
+flips_when = 1
+voices = [{
+"cue": "vo_popsy_normal",
+"emotion": "",
+"variations": 3
+}, {
+"cue": "vo_popsy_happy",
+"emotion": "happy",
+"variations": 3
+}, {
+"cue": "vo_popsy_sad",
+"emotion": "sad",
+"variations": 3
+}]
+script_name = "Popsy"
+description = "Popsy"
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-15, -17, 1, -25, 21, -16, 21, 2, -8, 9, -27, 3)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("2_xscpv")
+hframes = 3
+vframes = 3
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+position = Vector2(-11, -28)
