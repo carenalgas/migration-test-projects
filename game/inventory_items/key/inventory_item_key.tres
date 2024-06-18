@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://drgh4k5f1bjp4"]
+
+[ext_resource type="Script" path="res://game/inventory_items/key/inventory_item_key_state.gd" id="1_hcb77"]
+
+[resource]
+resource_name = "Key"
+script = ExtResource("1_hcb77")
+script_name = "Key"
+scene = "res://game/inventory_items/key/inventory_item_key.tscn"

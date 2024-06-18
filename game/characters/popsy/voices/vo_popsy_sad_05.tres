@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://xrj4tiw1wpur"]
+
+[ext_resource type="AudioStream" uid="uid://b3m2gxfi4jcx1" path="res://game/characters/popsy/voices/vo_popsy_sad_05.ogg" id="1_kqfk5"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_dtndk"]
+
+[resource]
+resource_name = "vo_popsy_sad_05"
+script = ExtResource("2_dtndk")
+audio = ExtResource("1_kqfk5")
+loop = false
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"

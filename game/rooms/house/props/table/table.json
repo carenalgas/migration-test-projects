@@ -1,0 +1,27 @@
+{ "frames": [
+   {
+    "filename": "house #table.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 320, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 180 },
+    "sourceSize": { "w": 320, "h": 180 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.6-x64",
+  "image": "table.png",
+  "format": "RGBA8888",
+  "size": { "w": 320, "h": 180 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "background", "from": 1, "to": 1, "direction": "forward", "color": "#000000ff" },
+   { "name": "door", "from": 2, "to": 3, "direction": "forward", "color": "#000000ff" },
+   { "name": "drawer", "from": 4, "to": 5, "direction": "forward", "color": "#000000ff" },
+   { "name": "table", "from": 6, "to": 6, "direction": "forward", "color": "#000000ff" },
+   { "name": "toy_car", "from": 7, "to": 7, "direction": "forward", "color": "#000000ff" }
+  ]
+ }
+}

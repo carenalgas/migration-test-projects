@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://bar8ovq0sov4n"]
+
+[ext_resource type="AudioStream" uid="uid://c5d22a6a2wv7e" path="res://game/rooms/outside/props/tree/audio/sfx_apple_fall.ogg" id="1_rf4mj"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_s0mvv"]
+
+[resource]
+resource_name = "sfx_apple_fall"
+script = ExtResource("2_s0mvv")
+audio = ExtResource("1_rf4mj")
+loop = false
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"

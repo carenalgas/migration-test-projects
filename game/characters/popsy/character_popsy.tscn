@@ -1,0 +1,333 @@
+[gd_scene load_steps=17 format=3 uid="uid://d3tbitqbrbqd"]
+
+[ext_resource type="Script" path="res://game/characters/popsy/character_popsy.gd" id="1_1ctyn"]
+[ext_resource type="Texture2D" uid="uid://ddr5v3t0jj6he" path="res://game/characters/popsy/popsy.png" id="2_487oi"]
+[ext_resource type="Resource" uid="uid://cenjyuhkuuejp" path="res://game/characters/popsy/voices/vo_popsy_normal_01.tres" id="2_hkto7"]
+[ext_resource type="Resource" uid="uid://bl6f5cureiix8" path="res://game/characters/popsy/voices/vo_popsy_normal_02.tres" id="3_d2t03"]
+[ext_resource type="Resource" uid="uid://ex7soqyh5bdr" path="res://game/characters/popsy/voices/vo_popsy_normal_03.tres" id="4_34lvp"]
+[ext_resource type="Resource" uid="uid://bxtcj0wjyhe2c" path="res://game/characters/popsy/voices/vo_popsy_sad_06.tres" id="5_hyo4r"]
+[ext_resource type="Resource" uid="uid://5i1hbvaa0f3f" path="res://game/characters/popsy/voices/vo_popsy_sad_03.tres" id="6_imdj5"]
+[ext_resource type="Resource" uid="uid://xrj4tiw1wpur" path="res://game/characters/popsy/voices/vo_popsy_sad_05.tres" id="7_ln03s"]
+[ext_resource type="Resource" uid="uid://usepf4d21sh7" path="res://game/characters/popsy/voices/vo_popsy_happy_02.tres" id="8_wfjx6"]
+[ext_resource type="Resource" uid="uid://cw3ysls5v50y4" path="res://game/characters/popsy/voices/vo_popsy_happy_07.tres" id="9_dxybk"]
+[ext_resource type="Resource" uid="uid://c8w0li1jh6x20" path="res://game/characters/popsy/voices/vo_popsy_happy_05.tres" id="10_ry4ie"]
+
+[sub_resource type="Animation" id="Animation_l6mxs"]
+length = 2.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.55, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 5, 6, 7, 0]
+}
+
+[sub_resource type="Animation" id="Animation_mqjh2"]
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_4b2u5"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_utalk"]
+resource_name = "sad"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h84gl"]
+_data = {
+"happy": SubResource("Animation_l6mxs"),
+"idle": SubResource("Animation_mqjh2"),
+"sad": SubResource("Animation_utalk"),
+"talk": SubResource("Animation_4b2u5")
+}
+
+[node name="CharacterPopsy" type="Area2D"]
+script = ExtResource("1_1ctyn")
+text_color = Color(0.768627, 0.423529, 0.443137, 1)
+flips_when = 1
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_hkto7"), ExtResource("3_d2t03"), ExtResource("4_34lvp")])
+}, {
+"emotion": "sad",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("5_hyo4r"), ExtResource("6_imdj5"), ExtResource("7_ln03s")])
+}, {
+"emotion": "happy",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("8_wfjx6"), ExtResource("9_dxybk"), ExtResource("10_ry4ie")])
+}]
+popochiu_placeholder = null
+script_name = "Popsy"
+description = "Popsy"
+baseline = -2
+walk_to_point = Vector2(-41, -7)
+cursor = 8
+interaction_polygon = PackedVector2Array()
+metadata/_popochiu_aseprite_config_ = {
+"o_folder": "",
+"o_name": "",
+"only_visible_layers": false,
+"op_exp": true,
+"source": "res://game/characters/popsy/popsy.aseprite",
+"tags": [{
+"direction": "forward",
+"from": 0.0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "idle",
+"to": 1.0
+}, {
+"direction": "forward",
+"from": 2.0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "talk",
+"to": 3.0
+}, {
+"direction": "forward",
+"from": 4.0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "cry",
+"to": 5.0
+}, {
+"direction": "forward",
+"from": 6.0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "happy",
+"to": 10.0
+}],
+"wipe_old_anims": true
+}
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-17, -19, -4, -27, 18, -21, 24, -1, -2, 8, -26, 2)
+
+[node name="ScalingPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+position = Vector2(0, -2)
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+position = Vector2(-41, -7)
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h84gl")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -9)
+texture = ExtResource("2_487oi")
+hframes = 3
+vframes = 3
+
+[node name="DialogPos" type="Marker2D" parent="."]
+position = Vector2(-11, -27)

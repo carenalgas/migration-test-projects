@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://bimuf30vinrp6"]
+
+[ext_resource type="Script" path="res://game/rooms/house/room_house.gd" id="1_cf36x"]
+[ext_resource type="PackedScene" uid="uid://xruaunhx475b" path="res://game/rooms/house/props/background/prop_background.tscn" id="2_ctk07"]
+[ext_resource type="PackedScene" uid="uid://qe31jgmospaw" path="res://game/rooms/house/walkable_areas/floor/walkable_area_floor.tscn" id="2_qfvyd"]
+[ext_resource type="PackedScene" uid="uid://cipg36yackitl" path="res://game/rooms/house/props/door/prop_door.tscn" id="3_kcndq"]
+[ext_resource type="PackedScene" uid="uid://cgvsgb7ds5k68" path="res://game/rooms/house/props/drawer/prop_drawer.tscn" id="4_eplxj"]
+[ext_resource type="PackedScene" uid="uid://b0sisaj6dlej7" path="res://game/rooms/house/props/table/prop_table.tscn" id="5_xyle3"]
+[ext_resource type="PackedScene" uid="uid://cr7unvt50ghq6" path="res://game/rooms/house/props/toy_car/prop_toy_car.tscn" id="6_35w3f"]
+[ext_resource type="PackedScene" uid="uid://b58lf0tu2e0uv" path="res://game/rooms/house/hotspots/window/hotspot_window.tscn" id="7_vbl4v"]
+[ext_resource type="PackedScene" uid="uid://c4ktqvrg6ao3q" path="res://game/rooms/house/regions/floor/region_floor.tscn" id="9_yo4a1"]
+[ext_resource type="PackedScene" uid="uid://chbk2qd8w8mxw" path="res://game/characters/goddiu/character_goddiu.tscn" id="10_a2pjr"]
+[ext_resource type="PackedScene" uid="uid://d3tbitqbrbqd" path="res://game/characters/popsy/character_popsy.tscn" id="11_s2pd1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6fim1"]
+vertices = PackedVector2Array(141, 34, 59, 48, -18, 48, -148, 36, -130, -9, 81, -16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-130, -9, 81, -16, 141, 34, 59, 48, -18, 48, -148, 36)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[node name="RoomHouse" type="Node2D"]
+script = ExtResource("1_cf36x")
+script_name = "House"
+popochiu_placeholder = null
+metadata/_popochiu_aseprite_config_ = {
+"o_folder": "",
+"o_name": "",
+"only_visible_layers": false,
+"op_exp": true,
+"source": "res://game/rooms/house/house.aseprite",
+"tags": [{
+"direction": "forward",
+"from": 0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "background",
+"to": 1.0
+}, {
+"direction": "forward",
+"from": 0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "door",
+"to": 2.0
+}, {
+"direction": "forward",
+"from": 0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "drawer",
+"to": 2.0
+}, {
+"direction": "forward",
+"from": 0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "table",
+"to": 1.0
+}, {
+"direction": "forward",
+"from": 0,
+"import": true,
+"loops": true,
+"prop_clickable": true,
+"prop_visible": true,
+"tag_name": "toy_car",
+"to": 1.0
+}],
+"wipe_old_anims": true
+}
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Floor" parent="WalkableAreas" instance=ExtResource("2_qfvyd")]
+position = Vector2(160, 90)
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Floor"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_6fim1")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Background" parent="Props" instance=ExtResource("2_ctk07")]
+clickable = false
+
+[node name="Door" parent="Props" instance=ExtResource("3_kcndq")]
+baseline = -89
+walk_to_point = Vector2(-83, -7)
+interaction_polygon = PackedVector2Array(-103, -57, -94, -68, -72, -68, -61, -56, -63, -18, -102, -17)
+
+[node name="Drawer" parent="Props" instance=ExtResource("4_eplxj")]
+baseline = -2
+walk_to_point = Vector2(-110, -4)
+interaction_polygon = PackedVector2Array(-144, -22, -121, -21, -121, -1, -132, 16, -151, 13, -151, -11)
+
+[node name="Table" parent="Props" instance=ExtResource("5_xyle3")]
+clickable = false
+baseline = 14
+
+[node name="ToyCar" parent="Props" instance=ExtResource("6_35w3f")]
+link_to_item = "ToyCar"
+baseline = 27
+walk_to_point = Vector2(-70, 25)
+interaction_polygon = PackedVector2Array(-98, 19, -81, 21, -81, 34, -102, 32)
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Window" parent="Hotspots" instance=ExtResource("7_vbl4v")]
+position = Vector2(138, 25)
+interaction_polygon = PackedVector2Array(-22, -19, -1, -24, 21, -19, 27, -2, 24, 18, 2, 24, -21, 18, -28, 0)
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Floor" parent="Regions" instance=ExtResource("9_yo4a1")]
+position = Vector2(160, 90)
+scaling = true
+scale_top = 0.7
+scale_bottom = 1.1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Regions/Floor"]
+modulate = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-157, 42, -135, -14, 86, -21, 152, 37, 61, 54, -23, 52)
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Bottom" type="Marker2D" parent="Markers"]
+position = Vector2(165, 131)
+
+[node name="TopRight" type="Marker2D" parent="Markers"]
+position = Vector2(236, 82)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" parent="Characters" instance=ExtResource("10_a2pjr")]
+position = Vector2(64, 102)
+
+[node name="CharacterPopsy *" parent="Characters" instance=ExtResource("11_s2pd1")]
+position = Vector2(245, 118)

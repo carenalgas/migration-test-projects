@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5f4qt272mcq7"]
+
+[ext_resource type="Script" path="res://game/inventory_items/toy_car/inventory_item_toy_car.gd" id="1_uxf6b"]
+[ext_resource type="Texture2D" uid="uid://cff1y2rrchilp" path="res://game/inventory_items/toy_car/toy_car.png" id="1_wrfrw"]
+
+[node name="ItemToyCar" type="TextureRect"]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_wrfrw")
+stretch_mode = 5
+script = ExtResource("1_uxf6b")
+script_name = "ToyCar"
+description = "Toy Car"

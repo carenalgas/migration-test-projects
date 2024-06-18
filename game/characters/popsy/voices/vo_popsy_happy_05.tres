@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://c8w0li1jh6x20"]
+
+[ext_resource type="AudioStream" uid="uid://dr154f6qstbip" path="res://game/characters/popsy/voices/vo_popsy_happy_05.ogg" id="1_dqmkg"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_qyv25"]
+
+[resource]
+resource_name = "vo_popsy_happy_05"
+script = ExtResource("2_qyv25")
+audio = ExtResource("1_dqmkg")
+loop = false
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"

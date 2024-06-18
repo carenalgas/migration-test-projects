@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueMusic" load_steps=3 format=3 uid="uid://d840s0ckkh1"]
+
+[ext_resource type="AudioStream" uid="uid://c4kgmqw33vy7s" path="res://game/music/mx_two_popochius.ogg" id="1_2kwlr"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_wy65i"]
+
+[resource]
+resource_name = "mx_two_popochius"
+script = ExtResource("2_wy65i")
+audio = ExtResource("1_2kwlr")
+loop = true
+is_2d = false
+can_play_simultaneous = true
+pitch = 1.0
+volume = -12.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+bus = "Master"
